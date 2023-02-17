@@ -1,3 +1,13 @@
+# Frida编译
+
+确保有一个环境良好的Ubuntu。
+
+1.   `./envinit.sh`
+2.   `make ...`
+
+---
+
+
 # Frida
 
 Dynamic instrumentation toolkit for developers, reverse-engineers, and security
