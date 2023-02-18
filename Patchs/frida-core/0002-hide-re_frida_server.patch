@@ -1,0 +1,25 @@
+From 0aff4fde9c565aadf9786a09ef421ae9de7c9d7e Mon Sep 17 00:00:00 2001
+From: Forgo7ten <Forgo7ten2020@gmail.com>
+Date: Sat, 18 Feb 2023 23:19:52 +0800
+Subject: [PATCH 2/9] hide re_frida_server
+
+---
+ server/server.vala | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/server/server.vala b/server/server.vala
+index 0b996e96..ba5fa98a 100644
+--- a/server/server.vala
++++ b/server/server.vala
+@@ -3,7 +3,7 @@ namespace Frida.Server {
+ 
+ 	private const string DEFAULT_LISTEN_ADDRESS = "127.0.0.1";
+ 	private const uint16 DEFAULT_LISTEN_PORT = 27042;
+-	private const string DEFAULT_DIRECTORY = "re.frida.server";
++	private const string DEFAULT_DIRECTORY = "yhnkkio_svr_cache";
+ 	private static bool output_version = false;
+ 	private static string? listen_address = null;
+ 	private static string? directory = null;
+-- 
+2.25.1
+
