@@ -1,0 +1,25 @@
+From ff747ba16ebe677ea84f894ec791f645d0a0ccbc Mon Sep 17 00:00:00 2001
+From: Forgo7ten <Forgo7ten2020@gmail.com>
+Date: Sat, 18 Feb 2023 20:30:34 +0800
+Subject: [PATCH 3/9] hide linjector
+
+---
+ src/linux/frida-helper-backend-glue.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/linux/frida-helper-backend-glue.c b/src/linux/frida-helper-backend-glue.c
+index ea660601..45e78fc9 100644
+--- a/src/linux/frida-helper-backend-glue.c
++++ b/src/linux/frida-helper-backend-glue.c
+@@ -961,7 +961,7 @@ frida_inject_instance_init_fifo (FridaInjectInstance * self)
+ {
+   const int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH;
+ 
+-  self->fifo_path = g_strdup_printf ("%s/linjector-%u", self->temp_path, self->id);
++  self->fifo_path = g_strdup_printf ("%s/yhnkkio-%u", self->temp_path, self->id);
+ 
+   mkfifo (self->fifo_path, mode);
+   chmod (self->fifo_path, mode);
+-- 
+2.25.1
+

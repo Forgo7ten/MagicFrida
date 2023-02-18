@@ -1,0 +1,25 @@
+From 1c32a5bcb12d95982415fd66a38b479865da695a Mon Sep 17 00:00:00 2001
+From: Forgo7ten <Forgo7ten2020@gmail.com>
+Date: Sat, 18 Feb 2023 20:53:35 +0800
+Subject: [PATCH 8/9] protocol unexpected command
+
+---
+ src/droidy/droidy-client.vala | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/droidy/droidy-client.vala b/src/droidy/droidy-client.vala
+index 1bc1c58b..c52711f3 100644
+--- a/src/droidy/droidy-client.vala
++++ b/src/droidy/droidy-client.vala
+@@ -998,7 +998,7 @@ namespace Frida.Droidy {
+ 						case "OPEN":
+ 						case "CLSE":
+ 						case "WRTE":
+-							throw new Error.PROTOCOL ("Unexpected command");
++							break; // throw new Error.PROTOCOL ("Unexpected command");
+ 
+ 						default:
+ 							var length = parse_length (command_or_length);
+-- 
+2.25.1
+

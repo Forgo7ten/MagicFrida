@@ -1,6 +1,7 @@
 echo "download dependency"
 sudo apt-get install -y build-essential curl git lib32stdc++-9-dev libc6-dev-i386 nodejs npm python3-dev python3-pip gcc-multilib g++-multilib
 sudo apt install -y unzip
+python3 -m pip install lief
 WORKSPACE=$(dirname $(pwd))
 if [ ! -d "$WORKSPACE/android-ndk-r24" ]; then
   echo "ndk-r24不存在"
@@ -16,6 +17,9 @@ if [ ! -d "build" ]; then
 fi
 python3 releng/generate-version-header.py "build/frida-version.h"
 echo "generate frida-version.h"
+cd frida-core
+git am ../Patchs/frida-core/*.patch && echo "Patch success!"
+cd ..
 echo "env init success!"
 echo "需手动设置环境变量"
 echo "=====>"

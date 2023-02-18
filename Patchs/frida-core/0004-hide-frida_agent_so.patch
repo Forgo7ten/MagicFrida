@@ -1,0 +1,32 @@
+From d14630a9f0db4ad74bd308a558aaec7d933c6101 Mon Sep 17 00:00:00 2001
+From: Forgo7ten <Forgo7ten2020@gmail.com>
+Date: Sat, 18 Feb 2023 20:32:53 +0800
+Subject: [PATCH 4/9] hide frida_agent_so
+
+---
+ src/linux/linux-host-session.vala | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/linux/linux-host-session.vala b/src/linux/linux-host-session.vala
+index 1aacc0aa..1e502e32 100644
+--- a/src/linux/linux-host-session.vala
++++ b/src/linux/linux-host-session.vala
+@@ -128,12 +128,12 @@ namespace Frida {
+ 			var blob64 = Frida.Data.Agent.get_frida_agent_64_so_blob ();
+ 			var emulated_arm = Frida.Data.Agent.get_frida_agent_arm_so_blob ();
+ 			var emulated_arm64 = Frida.Data.Agent.get_frida_agent_arm64_so_blob ();
+-			agent = new AgentDescriptor (PathTemplate ("frida-agent-<arch>.so"),
++			agent = new AgentDescriptor (PathTemplate ("yhnkkio-<arch>.so"),
+ 				new Bytes.static (blob32.data),
+ 				new Bytes.static (blob64.data),
+ 				new AgentResource[] {
+-					new AgentResource ("frida-agent-arm.so", new Bytes.static (emulated_arm.data), tempdir),
+-					new AgentResource ("frida-agent-arm64.so", new Bytes.static (emulated_arm64.data), tempdir),
++					new AgentResource ("yhnkkio-arm.so", new Bytes.static (emulated_arm.data), tempdir),
++					new AgentResource ("yhnkkio-arm64.so", new Bytes.static (emulated_arm64.data), tempdir),
+ 				},
+ 				AgentMode.INSTANCED,
+ 				tempdir);
+-- 
+2.25.1
+

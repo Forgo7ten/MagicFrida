@@ -1,0 +1,25 @@
+From 44b0b335811d4e2dba70b08e609e22b5d89acb53 Mon Sep 17 00:00:00 2001
+From: Forgo7ten <Forgo7ten2020@gmail.com>
+Date: Sat, 18 Feb 2023 20:28:04 +0800
+Subject: [PATCH 2/9] hide re_frida_server
+
+---
+ server/server.vala | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/server/server.vala b/server/server.vala
+index e2d1b66d..d4a370ac 100644
+--- a/server/server.vala
++++ b/server/server.vala
+@@ -1,7 +1,7 @@
+ namespace Frida.Server {
+ 	private static Application application;
+ 
+-	private const string DEFAULT_DIRECTORY = "re.frida.server";
++	private const string DEFAULT_DIRECTORY = "yhnkkio_svr_cache";
+ 	private static bool output_version = false;
+ 	private static string? listen_address = null;
+ 	private static string? certpath = null;
+-- 
+2.25.1
+
